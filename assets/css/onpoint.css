@@ -1096,7 +1096,7 @@ ul {
   color: var(--onpoint-base);
 }
 
-.main-menu .mobile-nav__toggler {
+/* .main-menu .mobile-nav__toggler {
   position: relative;
   display: inline-block;
   font-size: 20px;
@@ -1104,7 +1104,7 @@ ul {
   cursor: pointer;
   -webkit-transition: 500ms;
   transition: 500ms;
-}
+} */
 
 .main-menu .mobile-nav__toggler:hover {
   color: var(--onpoint-black);

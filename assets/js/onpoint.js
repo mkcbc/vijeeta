@@ -451,7 +451,6 @@
     dropdownAnchor.each(function () {
       let self = $(this);
       let toggleBtn = document.createElement("BUTTON");
-      toggleBtn.setAttribute("aria-label", "dropdown toggler");
       self.append(function () {
         return toggleBtn;
       });

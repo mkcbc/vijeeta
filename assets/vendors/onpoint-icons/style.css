@@ -27,6 +27,9 @@
 }
 
 
+.mobile-nav__content .main-menu__list li > a > button {
+  display: none !important;
+}
 
 
 
