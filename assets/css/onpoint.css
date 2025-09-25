@@ -24,7 +24,9 @@
   --onpoint-gray-rgb: 120, 120, 120;
   --onpoint-white: #ffffff;
   --onpoint-white-rgb: 255, 255, 255;
-  --onpoint-base: #C11425;
+  --onpoint-base: #598399
+
+;
   --onpoint-base-rgb: 193, 20, 37;
   --onpoint-black: #0F1B24;
   --onpoint-black-rgb: 15, 27, 36;
@@ -385,22 +387,6 @@ ul {
   text-align: center;
 }
 
-.preloader__image {
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: flipInY;
-  animation-name: flipInY;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  background-image: url(../images/loader.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 60px auto;
-  width: 100%;
-  height: 100%;
-}
 
 /* scroll to top */
 .scroll-to-top {
@@ -684,14 +670,14 @@ ul {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 70px;
+  gap: 305px;
   flex-wrap: wrap;
 }
 
 .main-menu__logo {
   position: relative;
   display: block;
-  padding: 30px 0;
+  padding: 25px 0;
   z-index: 1;
 }
 
@@ -703,6 +689,7 @@ ul {
 .main-menu__main-menu-box {
   position: relative;
   display: block;
+  
 }
 
 .main-menu__right {
@@ -867,7 +854,7 @@ ul {
 
 .main-menu .main-menu__list>li>a,
 .stricky-header .main-menu__list>li>a {
-  font-size: 15px;
+  font-size: 18px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1096,7 +1083,7 @@ ul {
   color: var(--onpoint-base);
 }
 
-/* .main-menu .mobile-nav__toggler {
+.main-menu .mobile-nav__toggler {
   position: relative;
   display: inline-block;
   font-size: 20px;
@@ -1104,7 +1091,7 @@ ul {
   cursor: pointer;
   -webkit-transition: 500ms;
   transition: 500ms;
-} */
+}
 
 .main-menu .mobile-nav__toggler:hover {
   color: var(--onpoint-black);
@@ -1795,7 +1782,9 @@ ul {
   position: absolute;
   top: -270px;
   right: -135px;
-  background: #C11425;
+  background: #598399
+
+;
   width: 411.26px;
   height: 649.19px;
   opacity: 0.8;
@@ -1810,7 +1799,9 @@ ul {
   left: 102px;
   width: 323.43px;
   height: 649.19px;
-  background: #C11425;
+  background: #598399
+
+;
   opacity: 0.8;
   filter: blur(145px);
   transform: rotate(160.05deg);
@@ -4135,7 +4126,9 @@ ul {
   right: 0;
   bottom: 0;
   border-radius: 20px;
-  background: linear-gradient(89.46deg, #C11425 49.9%, rgba(91, 9, 17, 0) 99.53%);
+  background: linear-gradient(89.46deg, #598399
+
+ 49.9%, rgba(91, 9, 17, 0) 99.53%);
   z-index: 1;
 }
 

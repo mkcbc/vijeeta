@@ -204,3 +204,16 @@
 .icon-Vector:before {
   content: "\e92a";
 }
+
+
+.main-menu {
+  background-color: #f2efed;
+  border-bottom: 3px solid #1d3557; /* base border */
+  box-shadow: 0 4px 10px -2px #1d3557; /* glow effect */
+}
+
+
+.main-menu__list > li > a {
+  color: #ffffff; /* white menu text */
+}
+

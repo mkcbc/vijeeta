@@ -108,24 +108,126 @@
         <header class="main-header">
             <nav class="main-menu">
                 <div class="main-menu__wrapper">
-                    <div class="container">
+<div class="container-fluid">
                         <div class="main-menu__wrapper-inner">
                             <div class="main-menu__left">
                                 <div class="main-menu__logo">
-<a href="index.html" style="display:flex; align-items:center; height:80px;">
+<a href="index.html" style="display:flex; align-items:center; height:80px; justify-content:flex-start; margin:0; padding:0;">
   <img src="assets/images/resources/oglogo.png" 
        alt="Vijeta Industries Logo" 
-       style="height:190px; width:auto; display:inline-block;">
-</a>                                </div>
+       style="height:250px; width:auto; display:block; margin:0; padding:0;">
+</a>
+
+<style>
+    .main-menu__wrapper-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, menu right */
+}
+
+.main-menu__logo {
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu__logo img {
+  height: 60px;   /* adjust size to fit navbar */
+  width: auto;
+  display: block;
+}
+
+.main-menu__list {
+  display: flex;
+  gap: 50px; /* spacing between menu items */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .main-menu__wrapper-inner {
+    flex-direction: column;   /* stack logo + menu */
+    align-items: flex-start;  /* align left */
+  }
+
+  .main-menu__list {
+    display: block;   /* stack menu items vertically */
+    width: 100%;
+  }
+
+  .main-menu__list li {
+    margin: 10px 0;   /* spacing between items */
+  }
+
+  .main-menu__list li a {
+    display: block;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* optional */
+  }
+}
+
+</style>
+<style>
+    .main-menu__wrapper-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, menu right */
+}
+
+.main-menu__logo {
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu__logo img {
+  height: 60px;   /* adjust size to fit navbar */
+  width: auto;
+  display: block;
+}
+
+.main-menu__list {
+  display: flex;
+  gap: 50px; /* spacing between menu items */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .main-menu__wrapper-inner {
+    flex-direction: column;   /* stack logo + menu */
+    align-items: flex-start;  /* align left */
+  }
+
+  .main-menu__list {
+    display: block;   /* stack menu items vertically */
+    width: 100%;
+  }
+
+  .main-menu__list li {
+    margin: 10px 0;   /* spacing between items */
+  }
+
+  .main-menu__list li a {
+    display: block;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.2); /* optional */
+  }
+}
+
+</style>
+                                </div>
                                 <div class="main-menu__main-menu-box">
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                     <ul class="main-menu__list">
                                         <li class="dropdown">
-                                            <a href="index.html">Home </a>
+                                            <a href="index.html">HOME </a>
                                          
                                         </li>
                                         <li>
-                                            <a href="#">About</a>
+                                            <a href="about.html">ABOUT</a>
                                         </li>
                                         <li class="dropdown">
                                             <a href="team.html">REVIEWS
@@ -154,7 +256,7 @@
 
 
         <!--Page Header Start-->
-        <section class="page-header">
+        <!-- <section class="page-header">
             <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
             </div>
             <div class="container">
@@ -169,7 +271,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!--Page Header End-->
 <!-- Contact Us Section Start -->
 <section class="contact-us-section">
@@ -203,7 +305,7 @@
           <h3>Our Office</h3>
           <p><strong>Address:</strong><br>
            Shree swami Samarth Appt Flat no.102 Near Ganpati Karkhana Shivaji Talav Ghansoli Gonv Navi Mumbai -400701</p>
-          <p><strong>Call us:</strong> +91 8425936259</p>
+          <p><strong>Call us:</strong> +91 +91 8425936259</p>
           
           <div class="map-box">
             <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15077.964578806306!2d72.98464058718606!3d19.12996673625543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%20Shree%20swami%20Samarth%20Appt%20Flat%20no.102%20Near%20Ganpati%20Karkhana%20Shivaji%20Talav%20Ghansoli%20Gonv%20Navi%20Mumbai%20-400701!5e0!3m2!1sen!2sin!4v1758294499352!5m2!1sen!2sin" 
@@ -243,7 +345,7 @@
   margin-bottom: 20px;
   font-size: 22px;
   font-weight: 600;
-  color: #ff6b35;
+  color: #598399;
 }
 .contact-form-box input, 
 .contact-form-box select, 
@@ -258,7 +360,7 @@
 .contact-form-box input:focus, 
 .contact-form-box textarea:focus,
 .contact-form-box select:focus {
-  border-color: #ff6b35;
+  border-color: #598399;
   outline: none;
   box-shadow: 0 0 5px rgba(255,107,53,0.4);
 }
@@ -310,15 +412,17 @@
                         </div>
                         <h3 class="cta-one__title">Need any help?
                             <br> contact us!</h3>
-                        <div class="cta-one__contact-box">
-                            <div class="icon">
-                                <span class="icon-phone"></span>
-                            </div>
-                            <div class="content">
-                                <p>Need help?</p>
-                                <h3><a href="tel:8425936259">8425936259</a></h3>
-                            </div>
-                        </div>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<div class="cta-one__contact-box">
+    <div class="icon">
+        <i class="fa-solid fa-envelope"></i> <!-- Mail icon -->
+    </div>
+    <div class="content">
+        <p>Need help?</p>
+        <h3><a href="mailto:info@vijetaindustries.com">info@vijetaindustries.com</a></h3>
+    </div>
+</div>
                     </div>
                 </div>
             </div>
@@ -356,7 +460,7 @@
                                             <div class="icon">
                                                 <span class="icon-call phone-call"></span>
                                             </div>
-                                            <p><a href="tel:8425936259">8425936259</a></p>
+                                            <p><a href="tel:+91 8425936259">+91 8425936259</a></p>
                                         </li>
                                     </ul>
                                 </div>
@@ -368,7 +472,7 @@
                                     </div>
                                     <ul class="footer-widget__company-list list-unstyled">
                                         <li>
-                                            <a href="#">About Us</a>
+                                            <a href="about.html">About Us</a>
                                         </li>
                                         <li>
                                             <a href="team.html">Reviews</a>
@@ -460,32 +564,10 @@
         <div class="mobile-nav__content">
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-2.png" width="150"
-                        alt="" /></a>
-            </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
             <!-- /.mobile-nav__container -->
 
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@onpoint.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
 
 
 
