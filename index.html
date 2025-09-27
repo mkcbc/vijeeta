@@ -155,24 +155,25 @@
 @media (max-width: 768px) {
   .main-menu__wrapper-inner {
     flex-direction: column;   /* stack logo + menu */
-    align-items: flex-end;    /* align right instead of left */
+    align-items: flex-start;  /* keep normal */
   }
 
   .main-menu__list {
-    display: block;   /* stack menu items vertically */
-    width: auto;      /* shrink to content instead of 100% */
-    text-align: right; /* align text right */
+    display: block;   
+    width: auto;      
+    margin-left: auto; /* <-- push the whole menu to the right */
+    text-align: right; /* align items right */
   }
 
   .main-menu__list li {
-    margin: 10px 0;   /* spacing between items */
+    margin: 10px 0;   
   }
 
   .main-menu__list li a {
     display: block;
     padding: 12px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.2); /* optional */
-    text-align: right; /* make sure links align right */
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    text-align: right;
   }
 }
 
