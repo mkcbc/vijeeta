@@ -155,12 +155,13 @@
 @media (max-width: 768px) {
   .main-menu__wrapper-inner {
     flex-direction: column;   /* stack logo + menu */
-    align-items: flex-start;  /* align left */
+    align-items: flex-end;    /* align right instead of left */
   }
 
   .main-menu__list {
     display: block;   /* stack menu items vertically */
-    width: 100%;
+    width: auto;      /* shrink to content instead of 100% */
+    text-align: right; /* align text right */
   }
 
   .main-menu__list li {
@@ -171,8 +172,10 @@
     display: block;
     padding: 12px 15px;
     border-bottom: 1px solid rgba(255,255,255,0.2); /* optional */
+    text-align: right; /* make sure links align right */
   }
 }
+
 
 </style>
                                 </div>
