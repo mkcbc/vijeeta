@@ -6,11 +6,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> Contact || onpoint || onpoint HTML 5 Template </title>
+    <title> Contact Us</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/resources/vjlogo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/resources/vjlogo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/resources/vjlogo.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="onpoint HTML 5 Template " />
 
@@ -51,11 +51,84 @@
 
 
 
-    <div class="preloader">
-        <div class="preloader__image"></div>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="logo-ring-wrapper">
+      <img src="assets/images/resources/vjlogo.png" alt="Logo">
+      <span class="loader-ring"></span>
     </div>
-    <!-- /.preloader -->
+  </div>
+</div>
 
+<style>
+/* Preloader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Wrapper for logo + ring */
+.logo-ring-wrapper {
+  position: relative;
+  width: 220px;   /* overall container size */
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo in center */
+.logo-ring-wrapper img {
+  width: 250px;   /* logo size */
+  height: auto;
+  border-radius: 50%; /* optional if you want circular crop */
+  z-index: 2;
+  position: relative;
+}
+
+/* Thin rotating ring */
+.loader-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;      /* transparent ring */
+  border-top: 4px solid #2b2d89;      /* top highlight color */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  z-index: 1;
+}
+
+/* Animation */
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hide preloader after load */
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
+
+<script>
+/* Fade out preloader once page fully loaded */
+window.addEventListener("load", function() {
+  document.getElementById("preloader").classList.add("hide");
+});
+</script>
 
     <!-- Start sidebar widget content -->
     <div class="xs-sidebar-group info-group info-sidebar">
@@ -284,20 +357,326 @@
 
     <div class="row">
       <!-- Contact Form -->
-      <div class="col-lg-6">
-        <div class="contact-form-box">
-          <h3>Contact Us</h3>
-          <form action="#" method="post">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="tel" name="phone" placeholder="Mobile Number" required>
-            
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="text" name="country" placeholder="Country / Region" required>
-            <textarea name="message" placeholder="Your Message" rows="3" required></textarea>
-            <button type="submit" class="btn-submit">Submit</button>
-          </form>
-        </div>
-      </div>
+  <!-- Add confetti library in <head> -->
+<style>
+.success-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-modal.show {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-animation {
+  margin-bottom: 30px;
+  position: relative;
+  height: 120px;
+}
+
+/* Animated Globe */
+.globe {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #2c3e50;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  animation: rotate 3s linear infinite;
+}
+
+.globe::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  right: -10%;
+  height: 3px;
+  background: #3498db;
+  transform: translateY(-50%);
+}
+
+.globe::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -10%;
+  bottom: -10%;
+  width: 3px;
+  background: #3498db;
+  transform: translateX(-50%);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Flying containers */
+.container-icon {
+  position: absolute;
+  font-size: 35px;
+  animation: fly 2s ease-in-out infinite;
+}
+
+.container-left {
+  left: 20%;
+  top: 50%;
+  animation-delay: 0s;
+}
+
+.container-right {
+  right: 20%;
+  top: 50%;
+  animation-delay: 1s;
+}
+
+@keyframes fly {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(10px) translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Checkmark animation */
+.checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 3;
+  stroke: #28a745;
+  stroke-miterlimit: 10;
+  margin: 20px auto;
+  box-shadow: inset 0px 0px 0px #28a745;
+  animation: fill 0.4s ease-in-out 0.4s forwards, scale 0.3s ease-in-out 0.9s both;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: #28a745;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px #28a745;
+  }
+}
+
+.modal-content h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.modal-content p {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.company-name {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.modal-close-btn {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.modal-close-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+.modal-close-btn:active {
+  transform: translateY(0);
+}
+
+/* Decorative elements */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #2ecc71, #3498db);
+  background-size: 200% 100%;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+</style>
+
+<div class="col-lg-6">
+  <div class="contact-form-box">
+    <h3>Contact Us</h3>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="phone" placeholder="Mobile Number" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="country" placeholder="Country / Region" required>
+      <textarea name="message" placeholder="Your Message" rows="3" required></textarea>
+      <button type="submit" class="btn-submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Success Modal -->
+<div id="successModal" class="success-modal">
+  <div class="modal-content">
+    <div class="modal-animation">
+      <div class="globe"></div>
+      <div class="container-icon container-left">📦</div>
+      <div class="container-icon container-right">📦</div>
+    </div>
+    
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+      <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    </svg>
+    
+    <h3>Message Received!</h3>
+    <p>Thank you for reaching out to us. Your inquiry has been successfully submitted.<br><br>
+    Our <span class="company-name">VJT</span> team will review your message and contact you shortly.</p>
+    <button class="modal-close-btn" onclick="closeModal()">Got it</button>
+  </div>
+</div>
+
+<script>
+function closeModal() {
+  document.getElementById('successModal').classList.remove('show');
+}
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const formData = {
+    name: this.name.value,
+    phone: this.phone.value,
+    email: this.email.value,
+    country: this.country.value,
+    message: this.message.value
+  };
+  
+  const submitButton = this.querySelector('.btn-submit');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
+  
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzT6HNKiDN_S5q-vMeZn86Z7-rWp1fEUCGDWgw_y6XQwh4ZoQ4O45wj0MfN9cuU9GrwFw/exec';
+  
+  fetch(scriptURL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(() => {
+    document.getElementById('successModal').classList.add('show');
+    this.reset();
+  })
+  .catch(error => {
+    alert('Something went wrong. Please try again.');
+  })
+  .finally(() => {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Submit';
+  });
+});
+
+// Close modal when clicking outside
+document.getElementById('successModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeModal();
+  }
+});
+</script>
 
       <!-- Contact Info + Map -->
       <div class="col-lg-6">

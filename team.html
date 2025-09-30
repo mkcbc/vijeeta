@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reviews</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/resources/vjlogo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/resources/vjlogo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/resources/vjlogo.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="onpoint HTML 5 Template " />
 
@@ -50,11 +50,85 @@
 <body>
 
 
-
-    <div class="preloader">
-        <div class="preloader__image"></div>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="logo-ring-wrapper">
+      <img src="assets/images/resources/vjlogo.png" alt="Logo">
+      <span class="loader-ring"></span>
     </div>
-    <!-- /.preloader -->
+  </div>
+</div>
+
+<style>
+/* Preloader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Wrapper for logo + ring */
+.logo-ring-wrapper {
+  position: relative;
+  width: 220px;   /* overall container size */
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo in center */
+.logo-ring-wrapper img {
+  width: 250px;   /* logo size */
+  height: auto;
+  border-radius: 50%; /* optional if you want circular crop */
+  z-index: 2;
+  position: relative;
+}
+
+/* Thin rotating ring */
+.loader-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;      /* transparent ring */
+  border-top: 4px solid #2b2d89;      /* top highlight color */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  z-index: 1;
+}
+
+/* Animation */
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hide preloader after load */
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
+
+<script>
+/* Fade out preloader once page fully loaded */
+window.addEventListener("load", function() {
+  document.getElementById("preloader").classList.add("hide");
+});
+</script>
+
 
 
     <!-- Start sidebar widget content -->

@@ -6,11 +6,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> About || onpoint || onpoint HTML 5 Template </title>
+    <title> About Us</title>
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/resources/vjlogo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/resources/vjlogo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/resources/vjlogo.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
     <meta name="description" content="onpoint HTML 5 Template " />
 
@@ -51,11 +51,84 @@
 
 
 
-    <div class="preloader">
-        <div class="preloader__image"></div>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="logo-ring-wrapper">
+      <img src="assets/images/resources/vjlogo.png" alt="Logo">
+      <span class="loader-ring"></span>
     </div>
-    <!-- /.preloader -->
+  </div>
+</div>
 
+<style>
+/* Preloader background */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Wrapper for logo + ring */
+.logo-ring-wrapper {
+  position: relative;
+  width: 220px;   /* overall container size */
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo in center */
+.logo-ring-wrapper img {
+  width: 250px;   /* logo size */
+  height: auto;
+  border-radius: 50%; /* optional if you want circular crop */
+  z-index: 2;
+  position: relative;
+}
+
+/* Thin rotating ring */
+.loader-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;      /* transparent ring */
+  border-top: 4px solid #2b2d89;      /* top highlight color */
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  z-index: 1;
+}
+
+/* Animation */
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hide preloader after load */
+#preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+</style>
+
+<script>
+/* Fade out preloader once page fully loaded */
+window.addEventListener("load", function() {
+  document.getElementById("preloader").classList.add("hide");
+});
+</script>
 
     <!-- Start sidebar widget content -->
     <div class="xs-sidebar-group info-group info-sidebar">
@@ -221,16 +294,17 @@
 
     <div class="row align-items-center">
       <!-- Founder Image -->
-      <div class="col-xl-4 col-lg-5 col-md-12 text-center mb-4 mb-lg-0">
-        <div class="founder-image" style="position:relative; display:inline-block;">
-          <img src="assets/images/resources/founder.jpg" alt="Founder"
-            style="width:240px; height:240px; object-fit:cover; border-radius:50%; border:6px solid #fff; box-shadow:0 8px 25px rgba(0,0,0,0.15);">
-          <div style="background:#598399; color:#fff; padding:10px 18px; border-radius:6px; margin-top:18px; display:inline-block; box-shadow:0 4px 12px rgba(0,0,0,0.12);">
-            <strong style="font-size:16px;">Mr. Gaurav Prajapati</strong><br>
-            <span style="font-size:14px; opacity:0.9;">Founder</span>
-          </div>
-        </div>
-      </div>
+<div class="col-xl-4 col-lg-5 col-md-12 text-center mb-4 mb-lg-0">
+  <div class="founder-image" style="position:relative; display:inline-block;">
+    <img src="assets/images/foundersir.png" alt="Founder"
+      style="width:100%; max-width:280px; height:auto; object-fit:cover; border-radius:12px; border:6px solid #fff; box-shadow:0 8px 25px rgba(0,0,0,0.15);">
+    <div style="background:#598399; color:#fff; padding:10px 18px; border-radius:6px; margin-top:18px; display:inline-block; box-shadow:0 4px 12px rgba(0,0,0,0.12);">
+      <strong style="font-size:16px;">Mr. Gaurav Prajapati</strong><br>
+      <span style="font-size:14px; opacity:0.9;">Founder</span>
+    </div>
+  </div>
+</div>
+
 
       <!-- Founder Message -->
       <div class="col-xl-8 col-lg-7 col-md-12">
