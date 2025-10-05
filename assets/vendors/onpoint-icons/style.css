@@ -217,3 +217,27 @@
   color: #ffffff; /* white menu text */
 }
 
+.cta-one__contact-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-one__contact-box .icon i {
+  font-size: 22px;        /* Make the icon larger */
+  color: #ffffff;         /* Match the text color (you can change this) */
+  opacity: 0.9;           /* Slight transparency for a clean look */
+}
+
+.cta-one__contact-box .content p {
+  margin: 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.cta-one__contact-box .content a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+}
